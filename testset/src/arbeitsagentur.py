@@ -8,12 +8,24 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import Select
 
 import json
 from PIL import Image
 
 
 from selenium.webdriver.support.wait import WebDriverWait
+
+def get_properties(element):
+    return {
+        prop: element.value_of_css_property(prop)
+        for prop in ['background-color', 'color', 'text-decoration']
+    }
+
+def reverse_properties(driver, element, before_properties):
+    for prop in ['background-color', 'color', 'text-decoration']:
+        #element.set_attribute(prop, before_properties[prop])
+        driver.execute_script("arguments[0].setAttribute(arguments[1], arguments[2]);", element, prop, before_properties[prop])
 
 
 def main():
@@ -27,6 +39,13 @@ def main():
     modal = WebDriverWait(driver, 60).until(EC.presence_of_element_located((By.XPATH, '/html/body/bahf-cookie-disclaimer-dpl3')))
     WebDriverWait(modal.shadow_root, 120).until(
         EC.visibility_of_element_located((By.CSS_SELECTOR, 'button'))).click()
+
+    WebDriverWait(driver, 60).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="listen-layout-button"]'))).click()
+    WebDriverWait(driver, 60).until(
+        EC.visibility_of_element_located((By.XPATH, '// *[ @ id = "Sortierung-dropdown-button"]'))).click()
+    WebDriverWait(driver, 60).until(
+        EC.visibility_of_element_located((By.XPATH, '// *[ @ id = "Sortierung-dropdown-item-2"]'))).click()
+
     #driver.implicitly_wait(120)
     #time.sleep(30)
     #modal.shadow_root.find_element(By.CSS_SELECTOR, 'button').click()
@@ -35,10 +54,13 @@ def main():
     list = WebDriverWait(driver, 60).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="ergebnisliste-liste-1"]')))
     #EC.visibility_of()
     #list = driver.find_element(By.XPATH, '//*[@id="ergebnisliste-liste-1"]')
-    i = 3
-    while (i <= 17):
+    i = 0
+    while (i <= 21):
         element = driver.find_element(By.XPATH, f'//*[@id="ergebnisliste-item-{i}"]')
+        before_props = get_properties(element)
+
         element.send_keys(Keys.SPACE)
+        reverse_properties(driver,element, before_props)
         #driver.execute_script("arguments[0].scrollIntoView(true);", element)
         #ActionChains(driver).move_to_element(element).perform()
         WebDriverWait(driver, 60).until(
@@ -49,31 +71,34 @@ def main():
         list.screenshot(f"../output1/1000{i}.png")
         i +=4
         print(i)
-    html_and_json_list = []
-    for i in range(0,25):
-        element = driver.find_element(By.XPATH, f'//*[@id="ergebnisliste-item-{i}"]')
-        child_json_list = []
-        child_json_list.append({"rect": element.rect, "font": element.value_of_css_property("color"),
-         "color": element.value_of_css_property("font")})
-        child_list = element.find_elements(By.CSS_SELECTOR, "*")
-        for child in child_list:
-            child_json_list.append({"rect": child.rect, "font": child.value_of_css_property("color"),
-                                    "color": child.value_of_css_property("font")})
 
-        html_and_json_list.append([element.get_attribute("innerHTML"), child_json_list])
 
     # i/3 * 4
-    j = 3
-
-    while j <= 15:
+    j = 0
+    html_and_json_list = []
+    while j <= 20:
         result_html = ""
         result_json = {}
-        k = int((j/3) *4)
-        for l in range(k,k+4):
-            result_html += html_and_json_list[l][0]
+        #k = int((j/3) *4)
+        tid = 0
+        for l in range(j+1,j+4):
+            element = driver.find_element(By.XPATH, f'//*[@id="ergebnisliste-item-{l}"]')
+            #result_html += element.get_attribute("innerHTML")
             entry_start = len(result_json.keys())
-            for entry in range(len(html_and_json_list[l][1])):
-                result_json[f"{entry_start + entry}"] = html_and_json_list[l][1][entry]
+            result_json[f"{entry_start}"]={"rect": element.rect, "font": element.value_of_css_property("color"),
+             "color": element.value_of_css_property("font")}
+
+            child_list = element.find_elements(By.CSS_SELECTOR, "*")
+            for child in child_list:
+                driver.execute_script("arguments[0].setAttribute('tid',arguments[1])",child, tid)
+                tid += 1
+            for entry in range(len(child_list)):
+                #driver.execute_script(f"child_list[entry].set_attribute('tid', '{tid}')")
+                #tid += 1
+                result_json[f"{entry_start + entry +1}"] = {"rect": child_list[entry].rect, "font": child_list[entry].value_of_css_property("color"),
+                                    "color": child_list[entry].value_of_css_property("font")}
+
+            result_html += element.get_attribute("innerHTML")
         with open(f"../output1/1000{j}.html", "w") as html, open(f"../output1/1000{j}.json", "w") as json_f:
             html.write(result_html)
             json.dump(result_json, json_f)
