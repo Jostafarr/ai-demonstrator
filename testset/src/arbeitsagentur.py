@@ -81,7 +81,7 @@ def main():
         result_json = {}
         #k = int((j/3) *4)
         tid = 0
-        for l in range(j+1,j+4):
+        for l in range(j+1,j+5):
             element = driver.find_element(By.XPATH, f'//*[@id="ergebnisliste-item-{l}"]')
             #result_html += element.get_attribute("innerHTML")
             entry_start = len(result_json.keys())

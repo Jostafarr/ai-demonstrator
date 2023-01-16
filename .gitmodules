@@ -1,0 +1,9 @@
+[submodule "TIE"]
+	path = TIE
+	url = git@github.com:X-LANCE/TIE.git
+[submodule "markuplm-large"]
+	path = markuplm-large
+	url = https://huggingface.co/microsoft/markuplm-large
+[submodule "markuplm-large-finetuned-websrc"]
+	path = markuplm-large-finetuned-websrc
+	url = https://huggingface.co/microsoft/markuplm-large-finetuned-websrc
