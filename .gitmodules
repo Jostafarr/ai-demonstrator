@@ -7,3 +7,9 @@
 [submodule "markuplm-large-finetuned-websrc"]
 	path = markuplm-large-finetuned-websrc
 	url = https://huggingface.co/microsoft/markuplm-large-finetuned-websrc
+[submodule "WebSRC-Baseline"]
+	path = WebSRC-Baseline
+	url = git@github.com:X-LANCE/WebSRC-Baseline.git
+[submodule "TIE_german_evaluation"]
+	path = TIE_german_evaluation
+	url = git@github.com:Jostafarr/TIE_german_evaluation.git

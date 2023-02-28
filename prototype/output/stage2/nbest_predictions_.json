@@ -1,0 +1,164 @@
+{
+    "jo100000100000": [
+        {
+            "text": "Stu\u00adden\u00adti\u00adsche Hilfskraft Recent Trends in AI",
+            "probability": 0.9943084335538277,
+            "tag_logit": 2.551083564758301,
+            "start_logit": -3.1591243743896484,
+            "end_logit": -3.5886173248291016,
+            "tag_id": 65
+        },
+        {
+            "text": "Stu\u00adden\u00adti\u00adsche Hilfskraft Recent Trends in AI Werkstudent",
+            "probability": 0.0024084188244510875,
+            "tag_logit": 2.551083564758301,
+            "start_logit": -3.1591243743896484,
+            "end_logit": -9.6116943359375,
+            "tag_id": 63
+        },
+        {
+            "text": "de",
+            "probability": 0.001678301899055988,
+            "tag_logit": 2.551083564758301,
+            "start_logit": -6.411781311035156,
+            "end_logit": -6.7202253341674805,
+            "tag_id": 28
+        },
+        {
+            "text": "de en",
+            "probability": 0.0003110651438315826,
+            "tag_logit": 2.551083564758301,
+            "start_logit": -6.411781311035156,
+            "end_logit": -8.405760765075684,
+            "tag_id": 26
+        },
+        {
+            "text": "Stu\u00adden\u00adti\u00adsche Hilfskraft Recent Trends in",
+            "probability": 0.0002319132021262067,
+            "tag_logit": 2.551083564758301,
+            "start_logit": -3.1591243743896484,
+            "end_logit": -11.952056884765625,
+            "tag_id": 65
+        },
+        {
+            "text": "Stu\u00adden\u00adti\u00adsche Hilfskraft",
+            "probability": 0.00018828858227767751,
+            "tag_logit": 2.551083564758301,
+            "start_logit": -3.1591243743896484,
+            "end_logit": -12.160444259643555,
+            "tag_id": 65
+        },
+        {
+            "text": "Stu\u00adden\u00adti\u00adsche",
+            "probability": 0.0001638843296344218,
+            "tag_logit": 2.551083564758301,
+            "start_logit": -3.1591243743896484,
+            "end_logit": -12.299259185791016,
+            "tag_id": 65
+        },
+        {
+            "text": "Recent Trends in AI",
+            "probability": 0.00014976197973696838,
+            "tag_logit": 2.551083564758301,
+            "start_logit": -11.959879875183105,
+            "end_logit": -3.5886173248291016,
+            "tag_id": 65
+        },
+        {
+            "text": "Alumni -und Studierendenprofile Archiv Stu\u00adden\u00adti\u00adsche Hilfskraft Recent Trends in AI",
+            "probability": 0.00011705629605957578,
+            "tag_logit": 2.551083564758301,
+            "start_logit": -12.20627212524414,
+            "end_logit": -3.5886173248291016,
+            "tag_id": 14
+        },
+        {
+            "text": "Archiv Stu\u00adden\u00adti\u00adsche Hilfskraft Recent Trends in AI",
+            "probability": 0.00010953884657188068,
+            "tag_logit": 2.551083564758301,
+            "start_logit": -12.272647857666016,
+            "end_logit": -3.5886173248291016,
+            "tag_id": 54
+        },
+        {
+            "text": "de en Navigation aufklappen/zuklappen HPI Connect Jobangebote",
+            "probability": 0.00010116186226464977,
+            "tag_logit": 2.551083564758301,
+            "start_logit": -6.411781311035156,
+            "end_logit": -9.529041290283203,
+            "tag_id": 15
+        },
+        {
+            "text": "AI",
+            "probability": 7.654493477216734e-05,
+            "tag_logit": 2.551083564758301,
+            "start_logit": -12.631049156188965,
+            "end_logit": -3.5886173248291016,
+            "tag_id": 65
+        },
+        {
+            "text": "en",
+            "probability": 6.673446022255496e-05,
+            "tag_logit": 2.551083564758301,
+            "start_logit": -7.951062202453613,
+            "end_logit": -8.405760765075684,
+            "tag_id": 31
+        },
+        {
+            "text": "en Navigation aufklappen/zuklappen HPI Connect Jobangebote",
+            "probability": 2.170279250893819e-05,
+            "tag_logit": 2.551083564758301,
+            "start_logit": -7.951062202453613,
+            "end_logit": -9.529041290283203,
+            "tag_id": 15
+        },
+        {
+            "text": "HPI Connect Jobportal de",
+            "probability": 2.145407988093105e-05,
+            "tag_logit": 2.551083564758301,
+            "start_logit": -10.771404266357422,
+            "end_logit": -6.7202253341674805,
+            "tag_id": 16
+        },
+        {
+            "text": "adjust",
+            "probability": 1.6425382451198524e-05,
+            "tag_logit": -5.330212116241455,
+            "start_logit": -8.332088470458984,
+            "end_logit": -9.426628112792969,
+            "tag_id": 444
+        },
+        {
+            "text": "de en Navigation aufklappen/zuklappen HPI Connect",
+            "probability": 1.1912319522164289e-05,
+            "tag_logit": 2.551083564758301,
+            "start_logit": -6.411781311035156,
+            "end_logit": -11.668190002441406,
+            "tag_id": 15
+        },
+        {
+            "text": "de en Navigation aufklappen/zuklappen",
+            "probability": 7.343377843234444e-06,
+            "tag_logit": 2.551083564758301,
+            "start_logit": -6.411781311035156,
+            "end_logit": -12.15196418762207,
+            "tag_id": 15
+        },
+        {
+            "text": "de en Navigation",
+            "probability": 6.081722967340279e-06,
+            "tag_logit": 2.551083564758301,
+            "start_logit": -6.411781311035156,
+            "end_logit": -12.340475082397461,
+            "tag_id": 15
+        },
+        {
+            "text": "HPI Connect Jobportal de en",
+            "probability": 3.9764099937501475e-06,
+            "tag_logit": 2.551083564758301,
+            "start_logit": -10.771404266357422,
+            "end_logit": -8.405760765075684,
+            "tag_id": 16
+        }
+    ]
+}
